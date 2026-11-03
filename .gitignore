@@ -84,7 +84,7 @@ dist
 .output
 
 # Gatsby files
-.cache/
+.cache
 # Comment in the public line in if your project uses Gatsby and not Next.js
 # https://nextjs.org/blog/next-9-1#public-directory-support
 # public
@@ -116,9 +116,6 @@ dist
 # DynamoDB Local files
 .dynamodb/
 
-# Firebase cache directory
-.firebase/
-
 # TernJS port file
 .tern-port
 
@@ -147,3 +144,14 @@ vite.config.ts.timestamp-*
 
 # Turbo Repo
 .turbo
+
+# Production build output
+build/
+
+# Operating system
+.DS_Store
+Thumbs.db
+
+# IDE settings
+.vscode/
+.idea/
