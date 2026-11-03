@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#__next {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #f8fafc;
+  color: #0f172a;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* The original tool pages include their own branding chrome. Keep that content intact
+   while showing the shared header and footer from AppLayout exactly once. */
+.app-page-content > div > header,
+.app-page-content > div > footer {
+  display: none;
+}
