@@ -55,7 +55,6 @@ export default function CSVCleanerTool() {
       <Head>
         <title>CSV Data Cleaner | PrivaTools</title>
         <meta name="description" content="Clean CSV data, remove duplicate rows, and trim whitespace locally in your browser memory." />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
       <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200">

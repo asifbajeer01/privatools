@@ -40,7 +40,6 @@ export default function GlobalHomepage() {
       <Head>
         <title>PrivaTools | Free Secure Online Productivity & Utility Platform</title>
         <meta name="description" content="100% free, privacy-first online tools for calculations, text processing, data cleaning, and career development. Zero server uploads." />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
       {/* Navigation Header */}
