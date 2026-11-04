@@ -15,19 +15,32 @@ export default function PercentageCalculatorTool() {
   const [origVal, setOrigVal] = useState('');
   const [finalVal, setFinalVal] = useState('');
 
-  // Computations
-  const result1 = (Number(val1) && Number(val2)) ? (Number(val1) * Number(val2)) / 100 : null;
-  const result2 = (Number(partVal) && Number(totalVal) && Number(totalVal) !== 0) ? (Number(partVal) / Number(totalVal)) * 100 : null;
-  
-  const diffNum = (Number(origVal) && Number(finalVal)) ? Number(finalVal) - Number(origVal) : null;
-  const pctChange = (Number(origVal) && Number(origVal) !== 0 && diffNum !== null) ? (diffNum / Number(origVal)) * 100 : null;
+  // Computations: an empty field means "no value yet"; 0 is a valid number.
+  const toNum = (v: string): number | null => {
+    if (v.trim() === '') return null;
+    const n = Number(v);
+    return Number.isFinite(n) ? n : null;
+  };
+  const n1 = toNum(val1);
+  const n2 = toNum(val2);
+  const nPart = toNum(partVal);
+  const nTotal = toNum(totalVal);
+  const nOrig = toNum(origVal);
+  const nFinal = toNum(finalVal);
+
+  const result1 = n1 !== null && n2 !== null ? (n1 * n2) / 100 : null;
+  // Division by zero has no defined result, so a total of 0 still shows "—".
+  const result2 = nPart !== null && nTotal !== null && nTotal !== 0 ? (nPart / nTotal) * 100 : null;
+
+  const diffNum = nOrig !== null && nFinal !== null ? nFinal - nOrig : null;
+  // Percentage change from an original value of 0 is undefined.
+  const pctChange = nOrig !== null && nOrig !== 0 && diffNum !== null ? (diffNum / nOrig) * 100 : null;
 
   return (
     <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 font-sans">
       <Head>
         <title>Percentage Calculator | PrivaTools</title>
         <meta name="description" content="Calculate percentages instantly. Find proportions, standard percentages, and percentage increases or decreases locally." />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
       {/* Header */}

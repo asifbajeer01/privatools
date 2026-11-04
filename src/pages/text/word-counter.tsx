@@ -21,7 +21,6 @@ export default function WordCounterTool() {
       <Head>
         <title>Word & Character Counter | PrivaTools</title>
         <meta name="description" content="Count words, characters, sentences, and paragraphs in real time. Processed instantly in your browser." />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
       {/* Header */}
